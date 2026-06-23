@@ -13,7 +13,7 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { Download } from '@mui/icons-material';
-import api from '../../services/api';
+import api, { BASE_URL } from '../../services/api';
 
 const Payslips = () => {
   const [payslips, setPayslips] = useState([]);
@@ -34,7 +34,7 @@ const Payslips = () => {
   }, []);
 
   const handleDownloadPDF = (id) => {
-    window.open(`http://localhost:5050/api/payroll/${id}/pdf?token=${localStorage.getItem('token')}`, '_blank');
+    window.open(`${BASE_URL}/api/payroll/${id}/pdf?token=${localStorage.getItem('token')}`, '_blank');
   };
 
   return (

@@ -1,4 +1,5 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050/api';
+export const BASE_URL = API_URL.replace(/\/api\/?$/, '');
 
 import axios from 'axios';
 

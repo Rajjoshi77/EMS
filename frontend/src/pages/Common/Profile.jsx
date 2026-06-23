@@ -13,7 +13,7 @@ import {
   Alert,
 } from '@mui/material';
 import { updateProfile } from '../../redux/slices/authSlice';
-import api from '../../services/api';
+import api, { BASE_URL } from '../../services/api';
 
 const Profile = () => {
   const { user, employeeProfile } = useSelector((state) => state.auth);
@@ -83,7 +83,7 @@ const Profile = () => {
                   <Grid item>
                     <Avatar
                       sx={{ width: 80, height: 80 }}
-                      src={user?.profileImage ? `http://localhost:5050${user.profileImage}` : ''}
+                      src={user?.profileImage ? `${BASE_URL}${user.profileImage}` : ''}
                     />
                   </Grid>
                   <Grid item>

@@ -38,7 +38,7 @@ import {
 } from '@mui/icons-material';
 import { io } from 'socket.io-client';
 import { logout } from '../redux/slices/authSlice';
-import api from '../services/api';
+import api, { BASE_URL } from '../services/api';
 
 const drawerWidth = 240;
 
@@ -67,7 +67,7 @@ const Layout = ({ darkMode, setDarkMode }) => {
     fetchNotifications();
 
     
-    const socket = io('http://localhost:5050');
+    const socket = io(BASE_URL);
     socket.emit('register', user.id || user._id);
 
     socket.on('notification', (notification) => {
@@ -236,7 +236,7 @@ const Layout = ({ darkMode, setDarkMode }) => {
             <IconButton onClick={handleProfileMenuOpen} sx={{ p: 0, ml: 1 }}>
               <Avatar
                 alt={user?.name}
-                src={user?.profileImage ? `http://localhost:5050${user.profileImage}` : ''}
+                src={user?.profileImage ? `${BASE_URL}${user.profileImage}` : ''}
               />
             </IconButton>
           </Box>

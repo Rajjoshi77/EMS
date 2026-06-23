@@ -19,7 +19,7 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { Add, Download } from '@mui/icons-material';
-import api from '../../services/api';
+import api, { BASE_URL } from '../../services/api';
 
 const PayrollGeneration = () => {
   const [payrolls, setPayrolls] = useState([]);
@@ -86,7 +86,7 @@ const PayrollGeneration = () => {
   };
 
   const handleExportExcel = () => {
-    window.open(`http://localhost:5050/api/payroll/export/excel?month=${selectedMonth}&token=${localStorage.getItem('token')}`, '_blank');
+    window.open(`${BASE_URL}/api/payroll/export/excel?month=${selectedMonth}&token=${localStorage.getItem('token')}`, '_blank');
   };
 
   return (
