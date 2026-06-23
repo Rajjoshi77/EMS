@@ -14,6 +14,7 @@ backend/uploads/
 .env.production.local
 *.env
 backend/.env
+README-DEV.md
 
 # IDE / Editor configuration
 .vscode/
