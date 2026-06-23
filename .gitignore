@@ -15,6 +15,7 @@ backend/uploads/
 *.env
 backend/.env
 README-DEV.md
+deployment_guide.md
 
 # IDE / Editor configuration
 .vscode/
